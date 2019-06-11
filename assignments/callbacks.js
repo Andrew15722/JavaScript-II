@@ -13,34 +13,40 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // Potential Solution:
 
   // Higher order function using "cb" as the call back
+
   function firstItem(arr, cb) {
     return cb(arr[0]);
   }
 
   // Function invocation 
+
   firstItem(items, function(first) {
     console.log(first)
   });
 
 */
 
+// Challenge 1
+length = (arr) => arr.length;
+getLength = (arr, cb) => cb(arr) // passing array into the cb function.
+console.log(getLength(items, length)); // calling the length function and passing the items array into it the get the items array length.
 
-function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
-}
+// Challenge 2
+lastItem = (arr) =>  arr[arr.length - 1]
+last = (arr, cb) => cb(arr); // last passes the last item of the array into the callback.
+console.log(last(items, lastItem));
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
-}
+// Challenge 3
+add = (x, y) =>  x + y;
+sumNums = (x, y, cb) => cb(x,y); // sumNums adds two numbers (x, y) and passes the result to the callback.
+console.log(sumNums(2,5, add));
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+//Challenge 4 
+multipliy = (x,y) =>  x * y;
+multiplyNums = (x, y, cb) => cb(x,y); // multiplyNums multiplies two numbers and passes the result to the callback.
+console.log(multiplyNums(3, 4, multipliy));
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
-
+//challenge 5
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
