@@ -92,8 +92,29 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 return an array with the first and lastname of runners who donated more than 250$.  plus " that's 3 figures"
+let threeFigures = [];
+runners.filter(function(item) {
+    if(item.donation > 250) {
+        threeFigures.push(`${item.first_name} ${item.last_name} ${item.donation} that's 3 figures!`)
+    }
+});
+console.log(threeFigures);
 
-// Problem 2
+// Problem 2  if runner.id is divisible by 10 return runners.email in an array.
+let newArr = []
+let divisible = runners.map (function(item) {
+    if(item.id % 10 === 0) {
+        newArr.push(item.email)
+    } 
+});
+console.log(newArr);
 
-// Problem 3
+// Problem 3 if runners.shirt_size = xs return runners.company in an array.
+let smallShirt =[]; 
+let checkForSmall = runners.map(function(item) {
+    if(item.shirt_size === "XS") {
+        smallShirt.push(`ID:${item.id} ${item.company_name}`)
+    }
+});
+console.log(smallShirt);

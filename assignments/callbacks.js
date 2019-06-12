@@ -42,15 +42,24 @@ sumNums = (x, y, cb) => cb(x,y); // sumNums adds two numbers (x, y) and passes t
 console.log(sumNums(2,5, add));
 
 //Challenge 4 
-multipliy = (x,y) =>  x * y;
+multiply = (x,y) =>  x * y;
 multiplyNums = (x, y, cb) => cb(x,y); // multiplyNums multiplies two numbers and passes the result to the callback.
-console.log(multiplyNums(3, 4, multipliy));
+console.log(multiplyNums(3, 4, multiply));
 
 //challenge 5
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for(i = 0; i < list.length; i++) {
+    if(list[i] === item) {
+      return cb(true);
+    } 
+  } return cb(false) // outside of the for loop, otherwise the loop will end early and you won't get the desired outcome.
 }
+
+console.log(contains('Pencil', items, (isHiding) => {
+  console.log(isHiding);
+}));
 
 /* STRETCH PROBLEM */
 
