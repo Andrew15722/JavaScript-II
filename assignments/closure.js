@@ -1,7 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function anon(){
+  let temp = "temp"
+  function display() {
+    console.log(temp)
+  }
+   display();
+}
 
-
+console.log(anon())
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
